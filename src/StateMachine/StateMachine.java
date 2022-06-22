@@ -4,39 +4,13 @@ import javax.swing.*;
 
 abstract class State
 {
-    static State input, verify, output, finish, current;
+    static State input, finish, current;
 
     void enter(Course[] courses, JFrame window) {}
     void update(Course[] courses, JFrame window) {}
 }
 
 class Input extends State
-{
-    void enter(Course[] courses, JFrame window)
-    {
-
-    }
-
-    void update(Course[] courses, JFrame window)
-    {
-
-    }
-}
-
-class Verify extends State
-{
-    void enter(Course[] courses, JFrame window)
-    {
-
-    }
-
-    void update(Course[] courses, JFrame window)
-    {
-
-    }
-}
-
-class Output extends State
 {
     void enter(Course[] courses, JFrame window)
     {
@@ -64,7 +38,7 @@ class Finish extends State
 
 public class StateMachine
 {
-    static State input, verify, output, finish, current;
+    static State input, finish, current;
     static JFrame window;
     Course[] courses;
     int size;
@@ -72,8 +46,6 @@ public class StateMachine
     public StateMachine(int size, JFrame window)
     {
         input = new Input();
-        verify = new Verify();
-        output = new Output();
         finish = new Finish();
         current = input;
         this.size = size;
